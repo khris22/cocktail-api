@@ -34,10 +34,14 @@ ActiveRecord::Schema.define(version: 2020_02_11_045539) do
   end
 
   create_table "liquors_cocktails", force: :cascade do |t|
-    t.integer "liquor_id"
-    t.integer "cocktail_id"
+    t.bigint "liquor_id"
+    t.bigint "cocktail_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cocktail_id"], name: "index_liquors_cocktails_on_cocktail_id"
+    t.index ["liquor_id"], name: "index_liquors_cocktails_on_liquor_id"
   end
 
+  add_foreign_key "liquors_cocktails", "cocktails"
+  add_foreign_key "liquors_cocktails", "liquors"
 end

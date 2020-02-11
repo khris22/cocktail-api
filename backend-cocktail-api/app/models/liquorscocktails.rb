@@ -1,0 +1,2 @@
+class LiquorsCocktails < ApplicationRecord
+end
