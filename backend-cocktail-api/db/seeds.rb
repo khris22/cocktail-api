@@ -23,7 +23,7 @@ margarita = Cocktail.create(name: 'Margarita', flavor: 'sour', ingredient: '2 oz
 honeysuckle = Cocktail.create(name: 'Honeysuckle', flavor: 'sweet', ingredient: '2 oz Angostura seven-year-old rum, 3⁄4 oz Fresh lime juice, 3⁄4 oz Honey syrup, 1 dash Angostura orange bitters', preparation: 'Add all ingredients into a shaker with ice and shake. Strain into a chilled coupe glass. Garnish with a lime wheel.', pic: 'https://unsplash.com/photos/KrMwGbcv5lU')
 
 # long island iced tea - vodka, rum, tequila, gin
-long_island = Cocktail.create(name: 'Long Island Iced Tea', flavor: '', ingredient: '1.5 cl Tequila, 1.5 cl Vodka, 1.5 cl White rum, 1.5 cl Triple sec, 1.5 cl Gin, 2.5 cl Lemon juice, 3.0 cl Gomme Syrup, 1 dash of Coke', preparation: 'Add all ingredients into highball glass filled with ice. Stir gently. Garnish with lemon spiral. Serve with straw.', pic: 'https://unsplash.com/photos/RiLzlQzwzik')
+long_island = Cocktail.create(name: 'Long Island Iced Tea', flavor: 'sweet', ingredient: '1.5 cl Tequila, 1.5 cl Vodka, 1.5 cl White rum, 1.5 cl Triple sec, 1.5 cl Gin, 2.5 cl Lemon juice, 3.0 cl Gomme Syrup, 1 dash of Coke', preparation: 'Add all ingredients into highball glass filled with ice. Stir gently. Garnish with lemon spiral. Serve with straw.', pic: 'https://unsplash.com/photos/RiLzlQzwzik')
 
 # LiquorsCocktails
 # LiquorCocktail.create(liquor: 1, cocktail: 1)
