@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_045539) do
+ActiveRecord::Schema.define(version: 2020_02_11_135404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 2020_02_11_045539) do
     t.string "preparation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "pic"
+  end
+
+  create_table "liquor_cocktails", force: :cascade do |t|
+    t.bigint "liquor_id", null: false
+    t.bigint "cocktail_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cocktail_id"], name: "index_liquor_cocktails_on_cocktail_id"
+    t.index ["liquor_id"], name: "index_liquor_cocktails_on_liquor_id"
   end
 
   create_table "liquors", force: :cascade do |t|
@@ -33,15 +43,6 @@ ActiveRecord::Schema.define(version: 2020_02_11_045539) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "liquors_cocktails", force: :cascade do |t|
-    t.bigint "liquor_id"
-    t.bigint "cocktail_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["cocktail_id"], name: "index_liquors_cocktails_on_cocktail_id"
-    t.index ["liquor_id"], name: "index_liquors_cocktails_on_liquor_id"
-  end
-
-  add_foreign_key "liquors_cocktails", "cocktails"
-  add_foreign_key "liquors_cocktails", "liquors"
+  add_foreign_key "liquor_cocktails", "cocktails"
+  add_foreign_key "liquor_cocktails", "liquors"
 end
