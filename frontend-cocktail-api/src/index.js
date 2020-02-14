@@ -6,9 +6,10 @@ console.log("testing...")
 //   .then(response => response.json())
 //   .then(parsedResponse => console.log(parsedResponse));
 
-const BACKEND_URL = 'http://localhost:3000/api/v1/cocktails';
+// const BACKEND_URL = 'http://localhost:3000/api/v1/cocktails';
 
-fetch(`${BACKEND_URL}`)
-  .then(response => response.json())
-  .then(parsedResponse => console.log(parsedResponse));
+// fetch(`${BACKEND_URL}`)
+//   .then(response => response.json())
+//   .then(parsedResponse => console.log(parsedResponse));
 
+  const app = new App()
