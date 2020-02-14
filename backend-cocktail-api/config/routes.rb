@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # get '/test', to: 'application#test'
-  root 'cocktails#index'
-  resources :liquors
-  resources :cocktails
+  # root 'cocktails#index'
+  
+  namespace :api do
+    namespace :v1 do  
+      resources :liquors
+      resources :cocktails
+    end
+  end
+
 end

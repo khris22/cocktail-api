@@ -1,4 +1,4 @@
-class LiquorsController < ApplicationController
+class Api::V1::LiquorsController < ApplicationController
 
     def index
         liquors = Liquor.all
