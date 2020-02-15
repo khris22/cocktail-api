@@ -1,4 +1,4 @@
-console.log("testing...")
+// console.log("testing...")
 
 // test that we can get data from the backend
 // const BACKEND_URL = 'http://localhost:3000';
@@ -12,4 +12,8 @@ console.log("testing...")
 //   .then(response => response.json())
 //   .then(parsedResponse => console.log(parsedResponse));
 
-  const app = new App()
+  // const app = new App()
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new App()
+})
