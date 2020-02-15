@@ -37,7 +37,7 @@ class Api::V1::CocktailsController < ApplicationController
 
     private
     def cocktail_params
-        params.require(:cocktail).permit(:name, :flavor, :ingredient, :preparation)
+        params.require(:cocktail).permit(:name, :flavor, :ingredient, :preparation, :pic)
 # permit liquors too? :liquors
 
     end

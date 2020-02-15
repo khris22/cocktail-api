@@ -14,16 +14,16 @@ gin =  Liquor.create(name: 'gin', alcohol_content: '40% - 47%', made_from: 'Juni
 
 # Cocktails
 # vodka - moscow mule, cosmopolitan, bloddy mary, black russian, vodka tonic, screwdriver, cape codder
-moscow_mule = Cocktail.create(name: 'Moscow Mule', flavor: 'spicy', ingredient: '4 oz Ginger beer, 1 1/2 oz Vodka, 1/6 oz Lime juice', preparation: 'Combine vodka and ginger beer in a copper mug or highball glass filled with ice. Add lime juice. Stir gently and garnish with a lime slice.', pic: 'https://unsplash.com/photos/wMA3PMrHksU')
+moscow_mule = Cocktail.create(name: 'Moscow Mule', flavor: 'spicy', ingredient: '4 oz Ginger beer, 1 1/2 oz Vodka, 1/6 oz Lime juice', preparation: 'Combine vodka and ginger beer in a copper mug or highball glass filled with ice. Add lime juice. Stir gently and garnish with a lime slice.', pic: 'https://www.thecocktaildb.com/images/media/drink/3pylqc1504370988.jpg')
 
 # tequila - margarita, tequila sunrise, paloma
-margarita = Cocktail.create(name: 'Margarita', flavor: 'sour', ingredient: '2 oz Tequila, 1 oz Lime juice, 1 oz Cointreau', preparation: 'Rub the rim of the glass with the lime slice to make the salt stick to it. Shake the other ingredients with ice, then carefully pour into the glass (taking care not to dislodge any salt). Garnish and serve over ice.', pic: 'https://unsplash.com/photos/K5IUb0kBZZ8')
+margarita = Cocktail.create(name: 'Margarita', flavor: 'sour', ingredient: '2 oz Tequila, 1 oz Lime juice, 1 oz Cointreau', preparation: 'Rub the rim of the glass with the lime slice to make the salt stick to it. Shake the other ingredients with ice, then carefully pour into the glass (taking care not to dislodge any salt). Garnish and serve over ice.', pic: 'https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg')
 
 # rum - rum & coke, honeysuckle cocktail, 
-honeysuckle = Cocktail.create(name: 'Honeysuckle', flavor: 'sweet', ingredient: '2 oz Angostura seven-year-old rum, 3⁄4 oz Fresh lime juice, 3⁄4 oz Honey syrup, 1 dash Angostura orange bitters', preparation: 'Add all ingredients into a shaker with ice and shake. Strain into a chilled coupe glass. Garnish with a lime wheel.', pic: 'https://unsplash.com/photos/KrMwGbcv5lU')
+honeysuckle = Cocktail.create(name: 'Honeysuckle', flavor: 'sweet', ingredient: '2 oz Angostura seven-year-old rum, 3⁄4 oz Fresh lime juice, 3⁄4 oz Honey syrup, 1 dash Angostura orange bitters', preparation: 'Add all ingredients into a shaker with ice and shake. Strain into a chilled coupe glass. Garnish with a lime wheel.', pic: 'https://www.thecocktaildb.com/drink.php?c=12067#prettyPhoto/0/')
 
 # long island iced tea - vodka, rum, tequila, gin
-long_island = Cocktail.create(name: 'Long Island Iced Tea', flavor: 'sweet', ingredient: '1.5 cl Tequila, 1.5 cl Vodka, 1.5 cl White rum, 1.5 cl Triple sec, 1.5 cl Gin, 2.5 cl Lemon juice, 3.0 cl Gomme Syrup, 1 dash of Coke', preparation: 'Add all ingredients into highball glass filled with ice. Stir gently. Garnish with lemon spiral. Serve with straw.', pic: 'https://unsplash.com/photos/RiLzlQzwzik')
+long_island = Cocktail.create(name: 'Long Island Iced Tea', flavor: 'sweet', ingredient: '1.5 cl Tequila, 1.5 cl Vodka, 1.5 cl White rum, 1.5 cl Triple sec, 1.5 cl Gin, 2.5 cl Lemon juice, 3.0 cl Gomme Syrup, 1 dash of Coke', preparation: 'Add all ingredients into highball glass filled with ice. Stir gently. Garnish with lemon spiral. Serve with straw.', pic: 'https://www.thecocktaildb.com/drink.php?c=17204-Long-Island-Iced-Tea#prettyPhoto/0/')
 
 # LiquorsCocktails
 # LiquorCocktail.create(liquor: 1, cocktail: 1)
