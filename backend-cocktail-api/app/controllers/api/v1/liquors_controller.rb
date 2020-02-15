@@ -7,11 +7,14 @@ class Api::V1::LiquorsController < ApplicationController
 
     def show
         liquor = Liquor.find(params[:id])
-        render json: LiquorSerializer.new(liquor)
+        options = {
+            include: [:cocktails]
+          }
+        render json: LiquorSerializer.new(liquor, options)
     end
 
     def create
-        liquor = Liquor.create(liquor_params[:id])
+        liquor = Liquor.create(liquor_params)
         render json: LiquorSerializer.new(liquor)
     end
 
