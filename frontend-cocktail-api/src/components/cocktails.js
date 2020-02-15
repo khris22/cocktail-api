@@ -11,8 +11,8 @@ class Cocktails {
             .getCocktails()
             .then(cocktails => {
                 // console.log(cocktails)
-                // for(const cocktail of cocktails.data) {
-                cocktails.data.forEach(cocktail => {
+                for(const cocktail of cocktails.data) {
+                // cocktails.data.forEach(cocktail => {
                     let cocktailObj = {
                         id: cocktail.id,
                         name: cocktail.attributes.name,
@@ -23,7 +23,7 @@ class Cocktails {
                     let newCocktail = new Cocktail(cocktailObj)
                     this.cocktails.push(newCocktail)
                     // console.log(this.cocktails)
-                })
+                }
             
             })
             console.log(this.cocktails)
