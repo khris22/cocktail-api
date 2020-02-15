@@ -2,9 +2,16 @@ class Cocktails {
     constructor() {
         this.cocktails = []
         this.adapter = new CocktailsAdapter()
-        // this.bindEventListeners()
+        
         this.fetchAndLoadCocktails()
+        // this.initBindingsAndEvents()
+        
     }
+
+//    initBindingsAndEvents() {
+//         // debugger
+//         this.container = document.querySelector('#cocktails-container')
+//     }
 
     fetchAndLoadCocktails() {
         this.adapter
@@ -15,6 +22,7 @@ class Cocktails {
                 // cocktails.data.forEach(cocktail => {
                     let cocktailObj = {
                         id: cocktail.id,
+                        liquors: cocktail.attributes.liquors[0].name,
                         name: cocktail.attributes.name,
                         flavor: cocktail.attributes.flavor,
                         ingredient: cocktail.attributes.ingredient,
@@ -26,8 +34,14 @@ class Cocktails {
                 }
             
             })
-            console.log(this.cocktails)
-            // .then(() => this.renderCocktails())
+            // console.log(this.cocktails)
+            .then(() => this.renderCocktails())
     }
 
+    renderCocktails() {
+        this.container = document.querySelector('#cocktails-container')
+        this.container.innerHTML = this.cocktails.map(cocktail => cocktail.cocktailHTML()).join('')
+   
+        
+    }
 }
