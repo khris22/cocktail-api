@@ -10,12 +10,12 @@ class Cocktails {
     initBindingAndEventListeners() {
         this.container = document.querySelector('#cocktails-container')
         this.cocktailForm = document.querySelector('#new-cocktail-form') 
-               
+        // this.
     }
 
     createCocktail() {
-        this.cocktailForm = document.querySelector('#new-cocktail-form')
-        debugger
+        // this.cocktailForm = document.querySelector('#new-cocktail-form')
+        // debugger
     }
 
     fetchAndLoadCocktails() {
@@ -27,7 +27,7 @@ class Cocktails {
                 // cocktails.data.forEach(cocktail => {
                     let cocktailObj = {
                         id: cocktail.id,
-                        liquors: cocktail.attributes.liquors[0].name,
+                        liquors: cocktail.attributes.liquors,
                         name: cocktail.attributes.name,
                         flavor: cocktail.attributes.flavor,
                         ingredient: cocktail.attributes.ingredient,

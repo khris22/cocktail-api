@@ -8,6 +8,7 @@ class Cocktail {
         this.preparation = cocktail.preparation
         this.pic = cocktail.pic
         this.liquors = cocktail.liquors
+        // debugger
     }
 
     cocktailHTML(){
@@ -15,10 +16,11 @@ class Cocktail {
             <div id='cocktail-card' class='cocktail-card' data-id='${this.id}'>
             <h4>${this.name}</h4>
             <img class='cocktail-pic' src='${this.pic}' style="width:150px;height:150px;"> 
-            <p>${this.flavor}</p>
-            <p>${this.ingredient}</p>
-            <p>${this.preparation}</p>
-            <p>${this.liquors}</p>
+            <p>Flavor: ${this.flavor}</p>
+            <p>Liquor Needed: ${this.liquors.map(l => l.name)}</p>
+            <p>Ingredients: ${this.ingredient}</p>
+            <p>Preparation: ${this.preparation}</p>
+           
             
             </div>
         `)
