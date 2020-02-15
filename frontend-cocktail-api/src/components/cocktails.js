@@ -2,16 +2,21 @@ class Cocktails {
     constructor() {
         this.cocktails = []
         this.adapter = new CocktailsAdapter()
-        
+        this.initBindingAndEventListeners()
         this.fetchAndLoadCocktails()
-        // this.initBindingsAndEvents()
-        
+        // this.createCocktail()
     }
 
-//    initBindingsAndEvents() {
-//         // debugger
-//         this.container = document.querySelector('#cocktails-container')
-//     }
+    initBindingAndEventListeners() {
+        this.container = document.querySelector('#cocktails-container')
+        this.cocktailForm = document.querySelector('#new-cocktail-form') 
+               
+    }
+
+    createCocktail() {
+        this.cocktailForm = document.querySelector('#new-cocktail-form')
+        debugger
+    }
 
     fetchAndLoadCocktails() {
         this.adapter
@@ -26,7 +31,8 @@ class Cocktails {
                         name: cocktail.attributes.name,
                         flavor: cocktail.attributes.flavor,
                         ingredient: cocktail.attributes.ingredient,
-                        preparation: cocktail.attributes.preparation
+                        preparation: cocktail.attributes.preparation,
+                        pic: cocktail.attributes.pic
                     }
                     let newCocktail = new Cocktail(cocktailObj)
                     this.cocktails.push(newCocktail)
@@ -39,9 +45,7 @@ class Cocktails {
     }
 
     renderCocktails() {
-        this.container = document.querySelector('#cocktails-container')
-        this.container.innerHTML = this.cocktails.map(cocktail => cocktail.cocktailHTML()).join('')
-   
-        
+        // this.container = document.querySelector('#cocktails-container')
+        this.container.innerHTML = this.cocktails.map(cocktail => cocktail.cocktailHTML()).join('')      
     }
 }
