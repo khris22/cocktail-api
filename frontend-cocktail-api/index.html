@@ -23,32 +23,45 @@
     
     <div id="new-form-container" >
         <form id="new-cocktail-form">
-            <h4>Enter a new Cocktail</h4>
+            <h4>Enter a new Cocktail</h4> 
+            <label for='f-name'>Name:</label>           
+            <input type="text" id='f-name' placeholder='Name' /></br>
+
             <label for='input-liquor'>Liquor:</label>
-            <select id='input-liquor' name="Select one" placeholder='Choose a Liquor' required/>
+            <select id='input-liquor' name="select-category" placeholder='Liquor' required>
                 <option value="vodka">vodka</option>
                 <option value="tequila">tequila</option>
                 <option value="gin">gin</option>
-            </select>
-            
+            </select></br>
 
-            <p>
-            <label for='input-cocktail'>Cocktail:</label></br>
-            <input type="text" placeholder='Name' /></br>
-            <input type="text" placeholder='Flavor' /></br>
-            <input type="text" placeholder='Ingredients' /></br>
-            <input type="text" placeholder='Preparation' /></br>
+            <label for='flavor'>Flavor:</label>   
+            <input type="radio" id="sweet" name="flavor" value="sweet">
+            <label for="sweet">Sweet</label>
+            <input type="radio" id="sour" name="flavor" value="sour">
+            <label for="sour">Sour</label>
+            <input type="radio" id="spicy" name="flavor" value="spicy">
+            <label for="spicy">Spicy</label>
+            <input type="radio" id="bitter" name="flavor" value="bitter">
+            <label for="bitter">Bitter</label></br>
 
-            <input type="submit" value="Submit"/>
-        </p>
+            <label for='f-ingredient'>Ingredients:</label></br>  
+            <textarea id='input-ingredient' rows='8' placeholder='Ingredients' required></textarea><br>
+            <label for='f-preparation'>Preparation:</label></br> 
+            <textarea id='input-prep' rows='8' placeholder='Preparation' required></textarea><br>
+
+            <button type='submit'>Add Cocktail</button>
         </form>
     </div>
    
+    <div id="cocktails-content">
+        <div id="cocktails-container">
 
-    <div id="cocktails-container">
+        </div>
 
+        <div id="cocktail-show">
+            
+        </div>
     </div>
-
 </div>
 
 </body>
