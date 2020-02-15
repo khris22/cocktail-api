@@ -6,12 +6,13 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <title>Cocktail App</title>
 
-    <script src="src/components/app.js" ></script>
-    <script src="src/components/cocktail.js" ></script>
     <script src="src/components/cocktails.js" ></script>
-    <script src="src/components/liquor.js" ></script>
+    <script src="src/components/cocktail.js" ></script>
     <script src="src/components/liquors.js" ></script>
-    
+    <script src="src/components/liquor.js" ></script>
+
+    <script src="src/components/app.js" ></script>
+
     <script src="src/adapters/CocktailsAdapter.js" ></script>
     <script src="src/adapters/LiquorsAdapter.js" ></script>
 
@@ -24,14 +25,14 @@
     <div id="new-form-container" >
         <form id="new-cocktail-form">
             <h4>Enter a new Cocktail</h4> 
-            <label for='f-name'>Name:</label>           
-            <input type="text" id='f-name' placeholder='Name' /></br>
+            <label for='name'>Name:</label>           
+            <input type="text" id='name' placeholder='Name' /></br>
 
             <label for='input-liquor'>Liquor:</label>
             <select id='input-liquor' name="select-category" placeholder='Liquor' required>
-                <option value="vodka">vodka</option>
+                <!-- <option value="vodka">vodka</option>
                 <option value="tequila">tequila</option>
-                <option value="gin">gin</option>
+                <option value="gin">gin</option> -->
             </select></br>
 
             <label for='flavor'>Flavor:</label>   
@@ -55,14 +56,13 @@
    
     <div id="cocktails-content">
         <div id="cocktails-container">
-
         </div>
-
         <div id="cocktail-show">
-            
         </div>
     </div>
 </div>
+
+
 
 </body>
 </html>
