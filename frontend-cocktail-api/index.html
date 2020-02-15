@@ -23,8 +23,24 @@
     
     <div id="new-form-container" >
         <form id="new-cocktail-form">
-            <input type="text" />
-            <input type="submit" value="Add a New Cocktail"/>
+            <h4>Enter a new Cocktail</h4>
+            <label for='input-liquor'>Liquor:</label>
+            <select id='input-liquor' name="Select one" placeholder='Choose a Liquor' required/>
+                <option value="vodka">vodka</option>
+                <option value="tequila">tequila</option>
+                <option value="gin">gin</option>
+            </select>
+            
+
+            <p>
+            <label for='input-cocktail'>Cocktail:</label></br>
+            <input type="text" placeholder='Name' /></br>
+            <input type="text" placeholder='Flavor' /></br>
+            <input type="text" placeholder='Ingredients' /></br>
+            <input type="text" placeholder='Preparation' /></br>
+
+            <input type="submit" value="Submit"/>
+        </p>
         </form>
     </div>
    
