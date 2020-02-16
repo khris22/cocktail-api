@@ -41,10 +41,16 @@ class Cocktails {
         // debugger
         this.adapter.createCocktailDB(params)
             .then(cocktail => {
-                this.cocktails.push(new Cocktail(cocktail))
+                // debugger
+                this.cocktails.push(new Cocktail(cocktail.data.attributes))
                 this.renderCocktails()
             })
-        
+            this.cocktailName.value = ''
+            this.inputLiquor.value = ''
+            this.cocktailFlavor.value = 'sweet'
+            this.cocktailIngredients.value = ''
+            this.cocktailPreparation.value = ''
+            this.cocktailPic.value = ''
         // debugger
     }
 
@@ -53,16 +59,17 @@ class Cocktails {
             .getCocktails()
             .then(cocktails => {
                 // console.log(cocktails)
-                for(const cocktail of cocktails.data) {
+                for(const cocktail of cocktails) {
                 // cocktails.data.forEach(cocktail => {
+                    // debugger
                     let cocktailObj = {
                         id: cocktail.id,
-                        liquors: cocktail.attributes.liquors,
-                        name: cocktail.attributes.name,
-                        flavor: cocktail.attributes.flavor,
-                        ingredient: cocktail.attributes.ingredient,
-                        preparation: cocktail.attributes.preparation,
-                        pic: cocktail.attributes.pic
+                        liquors: cocktail.liquors,
+                        name: cocktail.name,
+                        flavor: cocktail.flavor,
+                        ingredient: cocktail.ingredient,
+                        preparation: cocktail.preparation,
+                        pic: cocktail.pic
                     }
                     let newCocktail = new Cocktail(cocktailObj)
                     this.cocktails.push(newCocktail)
@@ -71,6 +78,7 @@ class Cocktails {
             
             })
             // console.log(this.cocktails)
+        
             .then(() => this.renderCocktails())
     }
 

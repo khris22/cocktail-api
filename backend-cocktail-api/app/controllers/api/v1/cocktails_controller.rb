@@ -2,7 +2,17 @@ class Api::V1::CocktailsController < ApplicationController
 
     def index
         cocktails = Cocktail.all 
-        render json: CocktailSerializer.new(cocktails)
+        # Option1 Using Fast Json Serializer
+        # options = {
+        #     include: [:liquors]
+        #   }
+        # render json: CocktailSerializer.new(cocktails, options)
+
+        # Option2
+        render json: cocktails.to_json(include: [:liquors])
+
+
+
     end
 
     def show
@@ -14,13 +24,17 @@ class Api::V1::CocktailsController < ApplicationController
     end
 
     def create
-        # current_cocktail.liquors.build(liquor_params)
-        # binding.pry
-        # current_liquor = Liquor.find_by(params[:id])
+        # Option1 - Using FastJson serializer
         current_liquor = Liquor.find_by_name(params[:liquor])
         cocktail = current_liquor.cocktails.create(cocktail_params)
         # cocktail = Cocktail.create(cocktail_params)
         render json: CocktailSerializer.new(cocktail)
+
+        # Option2 Custom
+
+
+
+
     end
 
     # def update
@@ -37,9 +51,10 @@ class Api::V1::CocktailsController < ApplicationController
 
 
     private
+    # def cocktail_params
+    #     params.require(:cocktail).permit(:name, :flavor, :ingredient, :preparation, :pic)
     def cocktail_params
         params.require(:cocktail).permit(:name, :flavor, :ingredient, :preparation, :pic)
-# permit liquors too? :liquors
 
     end
 end
