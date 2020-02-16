@@ -38,11 +38,17 @@ class Liquors {
     renderLiquorsOptions() {
         
         let options = this.liquors.map(liquor => liquor.name)
-        for(name of options) {
+        for(const liquor of options) {
+        // for(let i=0; i < options.length; i++) {
+            // debugger
+            // let opt = options[i]
            let element = document.createElement('option')
-           element.innerText = name
+           element.innerText = liquor
+        //    element.value = i + 1
+        // debugger
            this.liquorSelect.appendChild(element)
         }
+        
     }
   
 

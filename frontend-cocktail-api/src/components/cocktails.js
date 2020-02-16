@@ -42,7 +42,7 @@ class Cocktails {
         this.adapter.createCocktailDB(params)
             .then(cocktail => {
                 this.cocktails.push(new Cocktail(cocktail))
-                this.showCocktails()
+                this.renderCocktails()
             })
         
         // debugger

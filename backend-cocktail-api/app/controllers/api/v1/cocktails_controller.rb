@@ -15,7 +15,7 @@ class Api::V1::CocktailsController < ApplicationController
 
     def create
         # current_cocktail.liquors.build(liquor_params)
-        binding.pry
+        # binding.pry
         current_liquor = Liquor.find_by(params[:id])
         cocktail = current_liquor.cocktails.create(cocktail_params)
         # cocktail = Cocktail.create(cocktail_params)

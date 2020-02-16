@@ -7,9 +7,11 @@ class Cocktail {
         this.ingredient = cocktail.ingredient
         this.preparation = cocktail.preparation
         this.pic = cocktail.pic
-        this.liquors = cocktail.liquors
+        this.liquors = cocktail.liquors.map(l =>l.name)
+        //  this.liquors = cocktail.liquors
         // debugger
     }
+    
 
     cocktailHTML(){
         return(`
@@ -17,7 +19,7 @@ class Cocktail {
             <h4>${this.name}</h4>
             <img class='cocktail-pic' src='${this.pic}' style="width:150px;height:150px;"> 
             <p>Flavor: ${this.flavor}</p>
-            <p>Liquor Needed: ${this.liquors.map(l => l.name)}</p>
+            <p>Liquor Needed: ${this.liquors}</p>
             <p>Ingredients: ${this.ingredient}</p>
             <p>Preparation: ${this.preparation}</p>
            
@@ -28,7 +30,7 @@ class Cocktail {
 
 
 }
-
+{/* <p>Liquor Needed: ${this.liquors.map(l => l.name)}</p> */}
 
 
 
