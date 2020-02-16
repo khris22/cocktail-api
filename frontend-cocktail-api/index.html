@@ -35,6 +35,8 @@
                 <option value="gin">gin</option> -->
             </select></br>
 
+            <!-- radio button for flavor -->
+            <div id='radio-flavor'>
             <label for='flavor'>Flavor:</label>   
             <input type="radio" id="sweet" name="flavor" value="sweet">
             <label for="sweet">Sweet</label>
@@ -44,11 +46,15 @@
             <label for="spicy">Spicy</label>
             <input type="radio" id="bitter" name="flavor" value="bitter">
             <label for="bitter">Bitter</label></br>
+            </div>
 
-            <label for='f-ingredient'>Ingredients:</label></br>  
-            <textarea id='input-ingredient' rows='8' placeholder='Ingredients' required></textarea><br>
-            <label for='f-preparation'>Preparation:</label></br> 
-            <textarea id='input-prep' rows='8' placeholder='Preparation' required></textarea><br>
+            <label for='input-ingredients'>Ingredients:</label></br>  
+            <textarea id='input-ingredients' rows='8' placeholder='Ingredients' ></textarea><br>
+            <label for='input-prep'>Preparation:</label></br> 
+            <textarea id='input-prep' rows='8' placeholder='Preparation'></textarea><br>
+
+            <label for='pic'>Image:</label>           
+            <input type="text" id='pic' placeholder='Image Url' /></br>
 
             <button type='submit'>Add Cocktail</button>
         </form>
