@@ -17,7 +17,7 @@ class Api::V1::CocktailsController < ApplicationController
         # current_cocktail.liquors.build(liquor_params)
         binding.pry
         current_liquor = Liquor.find_by(params[:id])
-        current_liquor.cocktails.create(cocktails_params)
+        cocktail = current_liquor.cocktails.create(cocktail_params)
         # cocktail = Cocktail.create(cocktail_params)
         render json: CocktailSerializer.new(cocktail)
     end
