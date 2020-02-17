@@ -18,8 +18,9 @@ class Liquors {
         this.searchContainer = document.querySelector('#search-container')
         // debugger
         this.searchBox = document.querySelector('#search-box')
-        this.searchBox.addEventListener('input', this.findMatch.bind(this))
-        
+        // this.searchBox.addEventListener('input', this.findMatch.bind(this))
+        this.liquorInfo = document.querySelector('#search-liquor')
+        this.liquorInfo.addEventListener('change', this.findMatch.bind(this))
     }
 
 
@@ -43,6 +44,7 @@ class Liquors {
                 }
             })
             .then(() => this.renderLiquorsOptions())
+            .then(() => this.searchLiquorInfo())
     }
 
     renderLiquorsOptions() {
@@ -56,9 +58,22 @@ class Liquors {
            element.innerText = liquor
         //    element.value = i + 1
         // debugger
-           this.liquorSelect.appendChild(element)
+           this.liquorSelect.appendChild(element) 
+        //    this.liquorInfo .appendChild(element)
         }
         
+    }
+
+    searchLiquorInfo() {
+        let options = this.liquors.map(liquor => liquor.name)
+        for(const liquor of options) {
+           let element = document.createElement('option')
+           element.innerText = liquor
+        //    this.liquorSelect.appendChild(element) 
+           this.liquorInfo.appendChild(element)
+        //    this.liquorInfo.value = ''
+        //    debugger
+        }
     }
   
     findMatch(e) {
@@ -66,9 +81,20 @@ class Liquors {
 
         // this.searchBox.value
         // debugger
-        let input = this.searchBox.value.toLowerCase()
+        const input = e.currentTarget.value
 
-        
+
+        //   debugger
+        let matchArray = this.liquors.filter(liq => liq.name.toLowerCase().includes(input))
+
+        let newLiquorArray = matchArray.map(liq => liq.liquorHTML()).join('')
+        // this.liquorInfo.value = ''
+
+        // this.render(this.searchBox)
+        // debugger
+        this.searchContainer.innerHTML = newLiquorArray
+        // this.searchBox.value = ''
+        //         this.searchContainer.innerHTML = newLiquorArray
         // e.target.value
         
         // String.prototype.includes is the heavy lifter of the filter. You pass it a string and it gives you back true or false to let you know if its a substring of the original string.
