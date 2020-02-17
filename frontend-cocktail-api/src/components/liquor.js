@@ -9,6 +9,15 @@ class Liquor {
         this.cocktails = liquor.cocktails
        
     }
+
+    liquorHTML() {
+        return (`
+            <div id='liquor-container' class='liquor-container'>
+                <h4>${this.name}</h4>
+            </div>
+            
+        `)
+    }
 }
 
 // t.string "name"

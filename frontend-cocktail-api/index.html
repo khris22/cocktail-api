@@ -19,17 +19,20 @@
     <script src="src/index.js" ></script>
 </head>
 <body>
-<div class="main-container">
+<div id="main-container" class="main-container">
     <h2>COCKTAILS Testing!!!</h2>
-    
+    <!-- <button id='new-cocktail-btn' type="button" data-toggle="collapse">
+        <span>ADD A NEW COCKTAIL</span>
+      </button> -->
     <div id="new-form-container" >
         <form id="new-cocktail-form">
             <h4>Enter a new Cocktail</h4> 
             <label for='name'>Name:</label>           
-            <input type="text" id='name' placeholder='Name' /></br>
+            <input type="text" id='name' placeholder='Name' required/></br>
 
             <label for='input-liquor'>Liquor:</label>
             <select id='input-liquor' name="select-category" placeholder='Liquor' required>
+                <option disabled selected value> -- select an option -- </option>
                 <!-- <option value="vodka">vodka</option>
                 <option value="tequila">tequila</option>
                 <option value="gin">gin</option> -->
@@ -49,14 +52,20 @@
             </div>
 
             <label for='input-ingredients'>Ingredients:</label></br>  
-            <textarea id='input-ingredients' rows='8' placeholder='Ingredients' ></textarea><br>
+            <textarea id='input-ingredients' rows='8' placeholder='Ingredients' required ></textarea><br>
             <label for='input-prep'>Preparation:</label></br> 
-            <textarea id='input-prep' rows='8' placeholder='Preparation'></textarea><br>
+            <textarea id='input-prep' rows='8' placeholder='Preparation'required ></textarea><br>
 
             <label for='pic'>Image:</label>           
             <input type="text" id='pic' placeholder='Image Url' /></br>
 
             <button type='submit'>Add Cocktail</button>
+        </form>
+    </div>
+
+    <div id='search-container'>
+        <form id='search-form'>
+            <input id='search-box' type='text' placeholder="Search your Liquors">
         </form>
     </div>
    
