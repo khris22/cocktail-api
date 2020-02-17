@@ -44,12 +44,14 @@ class Api::V1::CocktailsController < ApplicationController
     # end
 
     def destroy
-        binding.pry
-        cocktail = Cocktail.find_by(id:params[:id])
-        
+        # binding.pry
+        # cocktail = Cocktail.find_by(id:params[:id])
         # render json: cocktail
         # Cocktail.destroy(cocktail.id)
-        cocktail.delete
+     
+        cocktail = Cocktail.find_by(id:params[:id])
+        cocktail.destroy
+
     end
 
 

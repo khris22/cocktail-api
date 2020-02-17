@@ -120,13 +120,20 @@ class Cocktails {
         // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
         e.preventDefault()
         // debugger
-        let cocktailId = e.target.parentElement.getAttribute("data-id")
-
+        const cocktailId = e.target.parentElement.getAttribute("data-id")
+        
         this.adapter
             .destroyCocktailId(cocktailId)
-            .then(json => {
-                // debugger
-            })
+            // .then(json => {
+            //     debugger
+            // })
+        // debugger
+        // this.fetchAndLoadCocktails()
+        // this.container.innerHTML = this.container.innerHTML
+
+
+        // working but does not seem ideal
+        location.reload()
 
     }
 }

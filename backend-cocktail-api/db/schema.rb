@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_135404) do
+ActiveRecord::Schema.define(version: 2020_02_17_150950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,6 @@ ActiveRecord::Schema.define(version: 2020_02_11_135404) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "liquor_cocktails", "cocktails"
-  add_foreign_key "liquor_cocktails", "liquors"
+  add_foreign_key "liquor_cocktails", "cocktails", on_delete: :cascade
+  add_foreign_key "liquor_cocktails", "liquors", on_delete: :cascade
 end
