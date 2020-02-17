@@ -102,22 +102,23 @@ class Cocktails {
         // debugger
         // this.deleteCocktail()
         // deleteBtn = document.querySelector("#deleteBtn")
-        // deleteBtn.addEventListener('click', deleteCocktail(e))
+        this.container.querySelector('button')
+        this.deleteBtn.addEventListener('click', deleteCocktail(e))
     }
 
-    // deleteCocktail() {
-    //     // debugger
-    //     this.deleteBtn = this.container.querySelector('#deleteBtn')
-    //     // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
-    //     // e.preventDefault()
-    //     // debugger
-    //     let cocktailId = e.target.parentElement.getAttribute("data-id")
+    deleteCocktail(e) {
+        // debugger
+        this.deleteBtn = this.container.querySelector('#deleteBtn')
+        // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
+        // e.preventDefault()
+        // debugger
+        let cocktailId = e.target.parentElement.getAttribute("data-id")
 
-    //     this.adapter
-    //         .destroyCocktailId(cocktailId)
-    //         .then(json => {
-    //             // debugger
-    //         })
+        this.adapter
+            .destroyCocktailId(cocktailId)
+            .then(json => {
+                // debugger
+            })
 
-    // }
+    }
 }
