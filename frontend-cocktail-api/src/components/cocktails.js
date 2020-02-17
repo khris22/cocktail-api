@@ -4,7 +4,8 @@ class Cocktails {
         this.adapter = new CocktailsAdapter()
         this.initBindingAndEventListeners()
         this.fetchAndLoadCocktails()
-        // this.createCocktail()
+        // this.deleteCocktail()
+        // debugger
     }
 
     initBindingAndEventListeners() {
@@ -15,9 +16,7 @@ class Cocktails {
         this.inputLiquor = this.cocktailForm.querySelector('#input-liquor')
         this.cocktailName = this.cocktailForm.querySelector('#name')
         this.cocktailFlavor = this.cocktailForm.elements.flavor
-        // this.cocktailFlavor = document.getElementById("myRadio")
-        // this.cocktailFlavor = this.cocktailForm.querySelector('#flavor')
-        // debugger
+
         this.cocktailIngredients = this.cocktailForm.querySelector('#input-ingredients')
         this.cocktailPreparation = this.cocktailForm.querySelector('#input-prep')
         this.cocktailPic = this.cocktailForm.querySelector('#pic')
@@ -25,6 +24,20 @@ class Cocktails {
 
         // submit button
         this.cocktailForm.addEventListener('submit', this.createCocktail.bind(this))
+
+        // debugger
+        // for patch request
+        // this.container.addEventListener('dblclick', function() { 
+        //     console.log('double click')
+        // })
+
+        // this.deleteBtn = this.container.querySelector('#deleteBtn')
+        // this.deleteBtn = document.querySelector("#deleteBtn")
+        // this.deleteBtn.addEventListener('click', console.log('delete'))
+        
+        // debugger
+        // this.handleDeleteCocktail
+
     }
 
     createCocktail(e) {
@@ -75,15 +88,36 @@ class Cocktails {
                     this.cocktails.push(newCocktail)
                     // console.log(this.cocktails)
                 }
-            
             })
             // console.log(this.cocktails)
-        
             .then(() => this.renderCocktails())
+            // .then(() => this.deleteCocktail())
+            
     }
 
     renderCocktails() {
         // this.container = document.querySelector('#cocktails-container')
-        this.container.innerHTML = this.cocktails.map(cocktail => cocktail.cocktailHTML()).join('')      
+        this.container.innerHTML = this.cocktails.map(cocktail => cocktail.cocktailHTML()).join('') 
+        
+        // debugger
+        // this.deleteCocktail()
+        // deleteBtn = document.querySelector("#deleteBtn")
+        // deleteBtn.addEventListener('click', deleteCocktail(e))
     }
+
+    // deleteCocktail() {
+    //     // debugger
+    //     this.deleteBtn = this.container.querySelector('#deleteBtn')
+    //     // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
+    //     // e.preventDefault()
+    //     // debugger
+    //     let cocktailId = e.target.parentElement.getAttribute("data-id")
+
+    //     this.adapter
+    //         .destroyCocktailId(cocktailId)
+    //         .then(json => {
+    //             // debugger
+    //         })
+
+    // }
 }

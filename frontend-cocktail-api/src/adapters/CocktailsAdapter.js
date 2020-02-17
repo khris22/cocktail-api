@@ -9,7 +9,7 @@ class CocktailsAdapter {
         .then(res => res.json())
     }
 
-    async createCocktailDB(params) {
+    createCocktailDB(params) {
         // debugger
         let cocktailData = {
             name: params[0],
@@ -30,6 +30,21 @@ class CocktailsAdapter {
         })
             .then(resp => resp.json())
     }
+
+    destroyCocktailId(cocktailId) {
+        // debugger
+        let configObj = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        }
+
+        return fetch(this.baseUrl + `/${cocktailId}`, configObj)
+            .then(resp => resp.json())
+    }
+
 
 }
 
