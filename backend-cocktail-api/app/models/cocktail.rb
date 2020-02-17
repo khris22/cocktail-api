@@ -1,5 +1,5 @@
 class Cocktail < ApplicationRecord
-    has_many :liquor_cocktails
+    has_many :liquor_cocktails, dependent: :destroy
     has_many :liquors, through: :liquor_cocktails
 
     # join table has no pther input but the ids of the models we want to associate

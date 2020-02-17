@@ -22,7 +22,7 @@ class Cocktail {
             <p>Liquor Needed: ${this.liquors}</p>
             <p>Ingredients: ${this.ingredient}</p>
             <p>Preparation: ${this.preparation}</p>
-            <button name='deleteBtn' >delete</button>
+            <button name='delete-card' class='delete-button' >delete</button>
             </div>`
             
         )

@@ -32,6 +32,7 @@ class Cocktails {
         // })
 
         // this.deleteBtn = this.container.querySelector('#deleteBtn')
+        // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
         // this.deleteBtn = document.querySelector("#deleteBtn")
         // this.deleteBtn.addEventListener('click', console.log('delete'))
         
@@ -101,16 +102,23 @@ class Cocktails {
         
         // debugger
         // this.deleteCocktail()
-        // deleteBtn = document.querySelector("#deleteBtn")
-        this.container.querySelector('button')
-        this.deleteBtn.addEventListener('click', deleteCocktail(e))
+        // this.deleteBtn = document.querySelector("#deleteBtn")
+        // this.container.querySelector('button')
+        // this.deleteBtn = this.container.querySelectorAll('deleteBtn')
+        this.deleteBtn = this.container.querySelectorAll('.delete-button')
+
+        // debugger
+        for(const del of this.deleteBtn) {
+            del.addEventListener('click', this.deleteCocktail.bind(this))
+        }
+        // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
     }
 
     deleteCocktail(e) {
         // debugger
-        this.deleteBtn = this.container.querySelector('#deleteBtn')
+        // this.deleteBtn = this.container.querySelector('#deleteBtn')
         // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
-        // e.preventDefault()
+        e.preventDefault()
         // debugger
         let cocktailId = e.target.parentElement.getAttribute("data-id")
 

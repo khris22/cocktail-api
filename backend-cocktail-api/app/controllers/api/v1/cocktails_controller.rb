@@ -43,11 +43,14 @@ class Api::V1::CocktailsController < ApplicationController
     #     render json: CocktailSerializer.new(cocktail)
     # end
 
-    # def destroy
-    #     cocktail = Cocktail.find(params[:id])
-    #     cocktail.delete
-    #     render json: {cocktailId: cocktail.id}
-    # end
+    def destroy
+        binding.pry
+        cocktail = Cocktail.find_by(id:params[:id])
+        
+        # render json: cocktail
+        # Cocktail.destroy(cocktail.id)
+        cocktail.delete
+    end
 
 
     private

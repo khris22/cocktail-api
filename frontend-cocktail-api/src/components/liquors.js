@@ -65,7 +65,7 @@ class Liquors {
         let input = e.target.value
         
         // String.prototype.includes is the heavy lifter of the filter. You pass it a string and it gives you back true or false to let you know if its a substring of the original string.
-        let matchLiquor = this.liquors.filter(liquor => liquor.name) 
+        let matchLiquor = this.liquors.filter(liquor => liquor.name.toLowerCase().includes(input.toLowerCase()) ) 
         
         // debugger
 

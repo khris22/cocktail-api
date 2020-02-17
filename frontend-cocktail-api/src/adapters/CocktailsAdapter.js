@@ -32,7 +32,7 @@ class CocktailsAdapter {
     }
 
     destroyCocktailId(cocktailId) {
-        // debugger
+    
         let configObj = {
             method: "DELETE",
             headers: {
