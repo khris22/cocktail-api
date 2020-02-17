@@ -12,12 +12,13 @@ class Liquors {
         // this.searchForm = document.querySelector('#search-form')
         // this.searchForm.style.visibility = "visible"
         // this.searchForm.style.display
-        this.searchBox = document.querySelector('#search-box')
-        this.searchBox.addEventListener('input', this.findMatch.bind(this))
-        this.searchBox.style.visibility = "visible"
+        
+        // this.searchBox.style.visibility = "visible"
         // debugger
         this.searchContainer = document.querySelector('#search-container')
         // debugger
+        this.searchBox = document.querySelector('#search-box')
+        this.searchBox.addEventListener('input', this.findMatch.bind(this))
         
     }
 
@@ -62,18 +63,39 @@ class Liquors {
   
     findMatch(e) {
         e.preventDefault()
-        let input = e.target.value
+
+        // this.searchBox.value
+        // debugger
+        let input = this.searchBox.value.toLowerCase()
+
+        
+        // e.target.value
         
         // String.prototype.includes is the heavy lifter of the filter. You pass it a string and it gives you back true or false to let you know if its a substring of the original string.
-        let matchLiquor = this.liquors.filter(liquor => liquor.name.toLowerCase().includes(input.toLowerCase()) ) 
-        
+
+        // let filterLiquor = this.filterMatch()
+        // this.searchBox.value = ''
+        // this.renderLiquorsOptions(filterLiquor)
+
+
+        // this.searchBox.value = ''
         // debugger
 
-        let newLiquorArray = matchLiquor.map(liq => liq.liquorHTML()).join('')
-        this.searchContainer.innerHTML = newLiquorArray
+        // let newLiquorArray = matchLiquor.map(liq => liq.liquorHTML()).join('')
+        // this.searchContainer.innerHTML = newLiquorArray
         // this.searchForm.style.display = "visible"
+        // filterMatch() {
+        //     let matchLiquor = this.liquors.filter(liquor => { 
+        //         return liquor.name.toLowerCase().includes(input.toLowerCase()) 
+        //         }) 
+        //         let newLiquorArray = matchLiquor.map(liq => liq.liquorHTML()).join('')
+        //         this.searchContainer.innerHTML = newLiquorArray
+        // }
+ 
+
     }
 
+    
 }
 
 // .then(cocktails => {
