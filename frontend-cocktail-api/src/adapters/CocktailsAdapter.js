@@ -9,7 +9,7 @@ class CocktailsAdapter {
         .then(res => res.json())
     }
 
-    async createCocktailDB(params) {
+   async createCocktailDB(params) {
         // debugger
         let cocktailData = {
             name: params[0],
