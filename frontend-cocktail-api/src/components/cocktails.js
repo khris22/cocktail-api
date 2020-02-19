@@ -105,13 +105,20 @@ class Cocktails {
         // this.deleteBtn = document.querySelector("#deleteBtn")
         // this.container.querySelector('button')
         // this.deleteBtn = this.container.querySelectorAll('deleteBtn')
-        this.deleteBtn = this.container.querySelectorAll('.delete-button')
-
+       
+        this.container.addEventListener('click', (e) => {
+            console.log(e.target.parentNode)
+            if(e.target.classList.contains('delete-button')) {
+                console.log('delete')
+                this.deleteCocktail(e)
+            }
+        })
         // debugger
-        for(const del of this.deleteBtn) {
-            del.addEventListener('click', this.deleteCocktail.bind(this))
-        }
-        // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
+        // this.deleteBtn = this.container.querySelectorAll('.delete-button')
+        // for(const del of this.deleteBtn) {
+        //     del.addEventListener('click', this.deleteCocktail.bind(this))
+        // }
+
     }
 
     deleteCocktail(e) {
@@ -121,19 +128,21 @@ class Cocktails {
         e.preventDefault()
         // debugger
         const cocktailId = e.target.parentElement.getAttribute("data-id")
-        
+        // debugger
         this.adapter
             .destroyCocktailId(cocktailId)
             // .then(json => {
             //     debugger
             // })
+            e.target.parentElement.remove()
         // debugger
+
         // this.fetchAndLoadCocktails()
         // this.container.innerHTML = this.container.innerHTML
 
 
         // working but does not seem ideal
-        location.reload()
+        // location.reload()
 
     }
 }

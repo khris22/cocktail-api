@@ -51,6 +51,7 @@ class Api::V1::CocktailsController < ApplicationController
      
         cocktail = Cocktail.find_by(id:params[:id])
         cocktail.destroy
+        render json: cocktail
 
     end
 

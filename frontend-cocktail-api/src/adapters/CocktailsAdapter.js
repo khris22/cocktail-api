@@ -34,11 +34,12 @@ class CocktailsAdapter {
     destroyCocktailId(cocktailId) {
     
         let configObj = {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            }
+            method: "DELETE"
+            // ,
+            // // headers: {
+            //     "Content-Type": "application/json",
+            //     "Accept": "application/json"
+            // }
         }
 
         return fetch(this.baseUrl + `/${cocktailId}`, configObj)
