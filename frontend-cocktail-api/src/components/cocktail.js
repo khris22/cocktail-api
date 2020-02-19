@@ -7,7 +7,7 @@ class Cocktail {
         this.ingredient = cocktail.ingredient
         this.preparation = cocktail.preparation
         this.pic = cocktail.pic
-        this.liquors = cocktail.liquors.map(l => l.name)
+        this.liquors = cocktail.liquors.map(l => l.name).join(', ')
         //  this.liquors = cocktail.liquors
         // this.initBindingAndEventListeners()
     }
@@ -17,7 +17,7 @@ class Cocktail {
         return(
             `<div name='cocktail-card' class='cocktail-card' data-id='${this.id}'>
             <h4>${this.name}</h4>
-            <img class='cocktail-pic' src='${this.pic}' style="width:150px;height:150px;" /> 
+            <img class='cocktail-pic' src='${this.pic}' style="width:200px;height:200px;" /> 
             <p>Flavor: ${this.flavor}</p>
             <p>Liquor Needed: ${this.liquors}</p>
             <p>Ingredients: ${this.ingredient}</p>

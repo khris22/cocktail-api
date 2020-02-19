@@ -21,6 +21,9 @@ class Liquors {
         // this.searchBox.addEventListener('input', this.findMatch.bind(this))
         this.liquorInfo = document.querySelector('#search-liquor')
         this.liquorInfo.addEventListener('change', this.findMatch.bind(this))
+
+        this.searchResult = document.querySelector('#search-result')
+        
     }
 
 
@@ -50,7 +53,17 @@ class Liquors {
     renderLiquorsOptions() {
         
         let options = this.liquors.map(liquor => liquor.name)
-        for(const liquor of options) {
+        let sortedOptions = options.sort(function (a, b) {
+            if (a < b) {
+                return -1;
+            }
+            if (b < a) {
+                return 1;
+            }
+            return 0;
+        })
+        // .sort((a,b) => b - a)
+        for(const liquor of sortedOptions) {
         // for(let i=0; i < options.length; i++) {
             // debugger
             // let opt = options[i]
@@ -66,12 +79,21 @@ class Liquors {
 
     searchLiquorInfo() {
         let options = this.liquors.map(liquor => liquor.name)
-        for(const liquor of options) {
+        let sortedOptions = options.sort(function (a, b) {
+            if (a < b) {
+                return -1;
+            }
+            if (b < a) {
+                return 1;
+            }
+            return 0;
+        })
+        for(const liquor of sortedOptions) {
            let element = document.createElement('option')
            element.innerText = liquor
-        //    this.liquorSelect.appendChild(element) 
+           
            this.liquorInfo.appendChild(element)
-        //    this.liquorInfo.value = ''
+        //    this.liquorInfo.value = 0
         //    debugger
         }
     }
@@ -85,15 +107,16 @@ class Liquors {
 
 
         //   debugger
-        let matchArray = this.liquors.filter(liq => liq.name.toLowerCase().includes(input))
-
+        let matchArray = this.liquors.filter(liq => liq.name.includes(input)) //returns an array
+        // let matchArray = this.liquors.find(liq => liq.name.toLowerCase() === input.toLowerCase()) //returns an Object
+        // debugger
         let newLiquorArray = matchArray.map(liq => liq.liquorHTML()).join('')
         // this.liquorInfo.value = ''
 
         // this.render(this.searchBox)
         // debugger
-        this.searchContainer.innerHTML = newLiquorArray
-        // this.searchBox.value = ''
+        this.searchResult.innerHTML = newLiquorArray
+        // this.liquorInfo.value = '' -->working!!!
         //         this.searchContainer.innerHTML = newLiquorArray
         // e.target.value
         
