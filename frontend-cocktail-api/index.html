@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:500|Raleway:500&display=swap" rel="stylesheet">
+    <!-- <script src="https://kit.fontawesome.com/c99d1ce142.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <title>Cocktail App</title>
 
@@ -11,49 +13,79 @@
 </head>
 <body>
 <div id="main-container" class="container">
-    <h2>COCKTAILS Testing!!!</h2>
-    <!-- <button id='new-cocktail-btn' type="button" data-toggle="collapse">
-        <span>ADD A NEW COCKTAIL</span>
-      </button> -->
-    <div id="new-form-container" >
-        <form id="new-cocktail-form">
-            <h4>Enter a new Cocktail</h4> 
-            <label for='name'>Name:</label>           
-            <input type="text" id='name' placeholder='Name' required/></br>
+    <h1>飲む</h1>
+    <h6>nomu</h6>
+    <div class="header-img">
+      <header><center><img src="images/cLogo.png" alt="nomu Header" class="img-responsive main-image"></center></header>
+    </div>
+<!-- <div class="card-deck">    -->
 
+<p>
+    <button class="btn btn-secondary" data-toggle="collapse" data-target="#new-form-container"
+    aria-expanded="false" aria-controls="new-form-container">
+    Add a New Cocktail
+  </button>
+</p>
+<div id="new-form-container" class="collapse shadow p-3 mb-5 bg-white rounded">
+        <form id="new-cocktail-form" class="needs-validation " novalidate>
+            <div class="row">
+            <!-- <h4>Enter a new Cocktail</h4>  -->
+            <div class="col">
+            <label for='name'>Name:</label>           
+            <input type="text" id='name' class="form-control col" placeholder='Name' required/>
+            </div>
+            <div class="col">
             <label for='input-liquor'>Liquor:</label>
-            <select id='input-liquor' name="select-category" placeholder='Liquor' required>
+            <select id='input-liquor' name="select-category" class="form-control" placeholder='Liquor' required>
                 <option disabled selected value> -- select an option -- </option>
                 <!-- <option value="vodka">vodka</option>
                 <option value="tequila">tequila</option>
                 <option value="gin">gin</option> -->
-            </select></br>
+            </select>
+        </div></br>
 
+    </div></br>
             <!-- radio button for flavor -->
-            <div id='radio-flavor'>
-            <label for='flavor'>Flavor:</label>   
-            <input type="radio" id="sweet" name="flavor" value="sweet" checked="checked">
-            <label for="sweet">Sweet</label>
-            <input type="radio" id="sour" name="flavor" value="sour">
-            <label for="sour">Sour</label>
-            <input type="radio" id="spicy" name="flavor" value="spicy">
-            <label for="spicy">Spicy</label>
-            <input type="radio" id="bitter" name="flavor" value="bitter">
-            <label for="bitter">Bitter</label></br>
+        <div id='radio-flavor'>
+            <label for='flavor'>Flavor:</label>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="sweet" name="flavor" value="sweet" checked="checked" class="custom-control-input">
+                <label for="sweet" class="custom-control-label">Sweet</label>
             </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="sour" name="flavor" value="sour" class="custom-control-input">
+                <label for="sour" class="custom-control-label">Sour</label>
+            </div>  
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="spicy" name="flavor" value="spicy" class="custom-control-input">
+                <label for="spicy" class="custom-control-label">Spicy</label>
+             </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="bitter" name="flavor" value="bitter" class="custom-control-input">
+                <label for="bitter" class="custom-control-label">Bitter</label></br>
+            </div>
+        </div> </br>
 
+    
+            <div class="form-row">
+                <div class="col">
             <label for='input-ingredients'>Ingredients:</label></br>  
-            <textarea id='input-ingredients' rows='8' placeholder='Ingredients' required ></textarea><br>
+            <textarea id='input-ingredients' class="form-control" placeholder='Ingredients' required ></textarea></div>
+            <div class="col">
             <label for='input-prep'>Preparation:</label></br> 
-            <textarea id='input-prep' rows='8' placeholder='Preparation'required ></textarea><br>
+            <textarea id='input-prep'  class="form-control" placeholder='Preparation' required ></textarea><br>
+            </div></div>
 
             <label for='pic'>Image:</label>           
-            <input type="text" id='pic' placeholder='Image Url' /></br>
-
-            <button type='submit'>Add Cocktail</button>
+            <input type="text" id='pic' placeholder='Image Url' class="form-control" /></br>
+                
+            <center><button class="btn btn-primary" type='submit'>Submit</button></center>
+            
         </form>
     </div>
 
+
+    <p>
     <div id='search-container'>
         <form id='search-form'>
             <!-- <input id='search-box' type='text' placeholder="Search your Liquors"> -->
@@ -71,15 +103,19 @@
         </div>
 
         </form>
-     
     </div>
+    </p>
+<!-- </div> -->
    
-    <div id="cocktails-content">
-        <div id="cocktails-container">
+    <div id="cocktails-content" >
+        <div id="cocktails-container" class="row row-cols-1 row-cols-md-3">
         </div>
         <div id="cocktail-show">
         </div>
     </div>
+    <footer class="container card-footer">
+        <small>&copy; 2020 <strong>飲む(nomu) by Khris P.</strong></small>
+    </footer>
 </div>
 
 <script src="src/components/cocktails.js" ></script>
@@ -94,6 +130,8 @@
 
 <script src="src/index.js" ></script>
 
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
