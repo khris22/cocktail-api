@@ -107,9 +107,8 @@ class Cocktails {
         // this.deleteBtn = this.container.querySelectorAll('deleteBtn')
        
         this.container.addEventListener('click', (e) => {
-            console.log(e.target.parentNode)
+            // console.log(e.target.parentNode)
             if(e.target.classList.contains('delete-button')) {
-                console.log('delete')
                 this.deleteCocktail(e)
             }
         })
@@ -131,12 +130,30 @@ class Cocktails {
         // debugger
         this.adapter
             .destroyCocktailId(cocktailId)
-            // .then(json => {
-            //     debugger
-            // })
-            e.target.parentElement.remove()
+  
+           
+        // this.cocktails.filter(c => c.Id != cocktailId)
+ 
+        // this.cocktails.remove(function(el) {
+        //    return el.Id == cocktailId
+        // })
+
+
+        // this.cocktails.filter(function(c) {
+        //     return c.Id !=cocktailId
+        // })
+        const indexN = parseInt(cocktailId, 10)
+        const removeIndex = this.cocktails.map(function(c){
+            return c.id
+        }).indexOf(indexN)
+        this.cocktails.splice(removeIndex, 1)
+
+        e.target.parentElement.remove()
+        this.renderCocktails()
         // debugger
 
+        
+        // e.target.parentNode.remove()
         // this.fetchAndLoadCocktails()
         // this.container.innerHTML = this.container.innerHTML
 
