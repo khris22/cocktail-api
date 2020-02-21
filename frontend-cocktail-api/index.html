@@ -13,18 +13,16 @@
 </head>
 <body>
 <div id="main-container" class="container">
-    <h1>飲む</h1>
-    <h6>nomu</h6>
     <div class="header-img">
-      <header><center><img src="images/cLogo.png" alt="nomu Header" class="img-responsive main-image"></center></header>
+      <header><center><img src="images/cocktailLogo.png" alt="nomu Header" class="img-fluid"></center></header>
     </div>
 <!-- <div class="card-deck">    -->
 
 <p>
-    <button class="btn btn-secondary" data-toggle="collapse" data-target="#new-form-container"
+    <center><button class="btn btn-secondary" data-toggle="collapse" data-target="#new-form-container"
     aria-expanded="false" aria-controls="new-form-container">
     Add a New Cocktail
-  </button>
+  </button></center>
 </p>
 <div id="new-form-container" class="collapse shadow p-3 mb-5 bg-white rounded">
         <form id="new-cocktail-form" class="needs-validation " novalidate>
@@ -79,35 +77,36 @@
             <label for='pic'>Image:</label>           
             <input type="text" id='pic' placeholder='Image Url' class="form-control" /></br>
                 
-            <center><button class="btn btn-primary" type='submit'>Submit</button></center>
+            <center><button class="btn btn-light" type='submit'>Submit</button></center>
             
         </form>
     </div>
 
 
-    <p>
-    <div id='search-container'>
+    
+    <div id='search-container' >
         <form id='search-form'>
             <!-- <input id='search-box' type='text' placeholder="Search your Liquors"> -->
 
-        <label for='search-liquor'>Know more about:</label>
-        <select id='search-liquor' name="select-category">
+        <label for='search-liquor'>Select a liquor for more information:</label>
+        <select id='search-liquor' name="select-category" class="browser-default custom-select">
         <option disabled selected value> -- Liquor -- </option>
                 <!-- <option value="vodka">vodka</option>
                 <option value="tequila">tequila</option>
                 <option value="gin">gin</option> -->
-        </select>
+        </select></br>
 
-        <div id='search-result'>
+        <div id='search-result' class= 'shadow p-3 mb-5 rounded'>
             
         </div>
 
         </form>
     </div>
-    </p>
+   
 <!-- </div> -->
    
     <div id="cocktails-content" >
+        <center><h4>Cocktails List:</h4></center>
         <div id="cocktails-container" class="row row-cols-1 row-cols-md-3">
         </div>
         <div id="cocktail-show">

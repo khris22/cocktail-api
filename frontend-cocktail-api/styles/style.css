@@ -18,13 +18,15 @@ div.cocktail-card img {
 }
 
 #new-cocktail-form {
-  background: #f0c2c0;
+  background: #f3bcbc;
   padding: 20px;
 }
-
 
 div.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  #header img { max-width: 80%; }
+#search-result {
+    background: #d8bdbd;
+    padding: 20px;
+  }
