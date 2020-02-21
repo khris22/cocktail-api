@@ -1,18 +1,16 @@
 class Api::V1::CocktailsController < ApplicationController
 
     def index
-        cocktails = Cocktail.all 
+        # Option2
+        cocktails = Cocktail.all
+        render json: cocktails.to_json(include: [:liquors]) 
+        
         # Option1 Using Fast Json Serializer
+        # cocktails = Cocktail.all
         # options = {
         #     include: [:liquors]
         #   }
         # render json: CocktailSerializer.new(cocktails, options)
-
-        # Option2
-        render json: cocktails.to_json(include: [:liquors])
-
-
-
     end
 
     def show
@@ -27,14 +25,7 @@ class Api::V1::CocktailsController < ApplicationController
         # Option1 - Using FastJson serializer
         current_liquor = Liquor.find_by_name(params[:liquor])
         cocktail = current_liquor.cocktails.create(cocktail_params)
-        # cocktail = Cocktail.create(cocktail_params)
         render json: CocktailSerializer.new(cocktail)
-
-        # Option2 Custom
-
-
-
-
     end
 
     # def update
@@ -43,24 +34,21 @@ class Api::V1::CocktailsController < ApplicationController
     #     render json: CocktailSerializer.new(cocktail)
     # end
 
-    def destroy
-        # binding.pry
-        # cocktail = Cocktail.find_by(id:params[:id])
-        # render json: cocktail
-        # Cocktail.destroy(cocktail.id)
-     
+    def destroy  
         cocktail = Cocktail.find_by(id:params[:id])
         cocktail.destroy
         render json: cocktail
 
+        # Option2
+        # cocktail = Cocktail.find_by(id:params[:id])
+        # render json: cocktail
+        # Cocktail.destroy(cocktail.id)
     end
-
 
     private
-    # def cocktail_params
-    #     params.require(:cocktail).permit(:name, :flavor, :ingredient, :preparation, :pic)
+
     def cocktail_params
         params.require(:cocktail).permit(:name, :flavor, :ingredient, :preparation, :pic)
-
     end
+    
 end
