@@ -6,3 +6,5 @@ let filteredData = data.filter(book => book.author.toLowerCase().includes(substr
 // Add Cascade to foreign_key to avoid postgres  foreign key constraints
 // add_foreign_key :my_object_times, :my_objects, on_delete: :cascade
 
+// Scope on Liquor model?
+scope :liquors_by_name, -> { liquors.order(name: :asc) }
