@@ -1,7 +1,6 @@
 class CocktailsAdapter {
     constructor() {
         this.baseUrl = 'http://localhost:3000/api/v1/cocktails'
-        // debugger
     }
 
     getCocktails() {
@@ -10,7 +9,6 @@ class CocktailsAdapter {
     }
 
    async createCocktailDB(params) {
-        // debugger
         let cocktailData = {
             name: params[0],
             liquor: params[1],
@@ -31,31 +29,12 @@ class CocktailsAdapter {
             .then(resp => resp.json())
     }
 
-    destroyCocktailId(cocktailId) {
-    
+    destroyCocktailId(cocktailId) { 
         let configObj = {
             method: "DELETE"
-            // ,
-            // // headers: {
-            //     "Content-Type": "application/json",
-            //     "Accept": "application/json"
-            // }
         }
-
         return fetch(this.baseUrl + `/${cocktailId}`, configObj)
             .then(resp => resp.json())
     }
 
-
 }
-
-// adapter = new CocktailsAdapter()
-
-// const cocktails = adapter.getCocktails()
-
-
-// const BACKEND_URL = 'http://localhost:3000/api/v1/cocktails';
-
-// fetch(`${BACKEND_URL}`)
-//   .then(response => response.json())
-//   .then(parsedResponse => console.log(parsedResponse));
