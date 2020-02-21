@@ -1,5 +1,7 @@
 # 飲む(nomu)
 
+飲む(nomu) mean `"to drink"` in Japanese. This app is for everybody who wants options right away when ordering or making a cocktail.
+
 ## Overview
 
 飲む(nomu) is a JavaScript Single Page Application (SPA) with a backend Ruby on Rails API. This app allows the user to save different cocktails and how to prepare them in the app. It also gives information about the different kinds of liquor the user can use. It also has the functionality to delete a prticular cocktail based on the user preference.    
@@ -23,9 +25,9 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/khris2
 
 ## License
 
-The project is available as open source under the terms of the [MIT License](https://github.com/khris22/).
+The project is available as open source under the terms of the [MIT License](https://github.com/khris22/cocktail-api/blob/master/LICENSE).
 
 ## Code of Conduct
 
-Everyone interacting in the AdventureTracker project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/khris22/).
+Everyone interacting in the AdventureTracker project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/khris22/cocktail-api/blob/master/CODE_OF_CONDUCT.md).
 
