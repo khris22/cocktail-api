@@ -1,6 +1,6 @@
 # 飲む(nomu)
 
-飲む(nomu) mean `"to drink"` in Japanese. This app is for everybody who wants options right away when ordering or making a cocktail.
+飲む(nomu) means `"to drink"` in Japanese. This app is for everybody who wants options right away when ordering or making a cocktail.
 
 ## Overview
 
