@@ -14,11 +14,20 @@ When we provide two arguments to .splice(), the first is still the index at whic
 
 # join table has no other input but the ids of the models we want to associate --> has_and_belongs_to_many :liquors
 
+# Another option for handling delete button
+> cocktails.js (initBindings...)
+        // this.deleteBtn = this.container.querySelector('#deleteBtn')
+        // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
+> renderCocktails()
+        // this.deleteBtn = this.container.querySelectorAll('.delete-button')
+        // for(const del of this.deleteBtn) {
+        //     del.addEventListener('click', this.deleteCocktail.bind(this))
+        // }
+
 
 
 ### Additional Features
 [ ] User Login
 [ ] Add more options for Liquor (Cocktail has_many liquors)
 [ ] Use of bootstrap modal
-[ ] Responsive columnd on delete
 [ ] Update/Edit an entry
