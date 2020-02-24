@@ -14,7 +14,7 @@ class Api::V1::CocktailsController < ApplicationController
     end
 
     def show
-        cocktail = Cocktail.find(params[:id])
+        cocktail = Cocktail.find_by(id:params[:id])
         options = {
             include: [:liquors]
           }
@@ -35,8 +35,10 @@ class Api::V1::CocktailsController < ApplicationController
     # end
 
     def destroy  
+        # binding.pry
         cocktail = Cocktail.find_by(id:params[:id])
         cocktail.destroy
+        # cocktail.delete
         render json: cocktail
 
         # Option2
