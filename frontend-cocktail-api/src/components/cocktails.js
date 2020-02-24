@@ -4,8 +4,6 @@ class Cocktails {
         this.adapter = new CocktailsAdapter()
         this.initBindingAndEventListeners()
         this.fetchAndLoadCocktails()
-        // this.deleteCocktail()
-        // debugger
     }
 
     initBindingAndEventListeners() {
@@ -16,28 +14,12 @@ class Cocktails {
         this.inputLiquor = this.cocktailForm.querySelector('#input-liquor')
         this.cocktailName = this.cocktailForm.querySelector('#name')
         this.cocktailFlavor = this.cocktailForm.elements.flavor
-
         this.cocktailIngredients = this.cocktailForm.querySelector('#input-ingredients')
         this.cocktailPreparation = this.cocktailForm.querySelector('#input-prep')
         this.cocktailPic = this.cocktailForm.querySelector('#pic')
-        // debugger
 
         // submit button
         this.cocktailForm.addEventListener('submit', this.createCocktail.bind(this))
-
-        // debugger
-        // for patch request
-        // this.container.addEventListener('dblclick', function() { 
-        //     console.log('double click')
-        // })
-
-        // this.deleteBtn = this.container.querySelector('#deleteBtn')
-        // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
-        // this.deleteBtn = document.querySelector("#deleteBtn")
-        // this.deleteBtn.addEventListener('click', console.log('delete'))
-        
-        // debugger
-        // this.handleDeleteCocktail
 
     }
 
@@ -45,34 +27,30 @@ class Cocktails {
         e.preventDefault()
         const name = this.cocktailName.value
         const liquor = this.inputLiquor.value
-        // const flavor = this.cocktailFlavor.checked.value
         const flavor = this.cocktailFlavor.value
-        //  debugger
         const ingredient = this.cocktailIngredients.value
         const preparation = this.cocktailPreparation.value
         const pic = this.cocktailPic.value
         const params = [name, liquor, flavor, ingredient, preparation, pic]
-        // debugger
+
         this.adapter.createCocktailDB(params)
             .then(cocktail => {
-                // debugger
                 this.cocktails.push(new Cocktail(cocktail.data.attributes))
                 this.renderCocktails()
             })
-            this.cocktailName.value = ''
-            this.inputLiquor.value = ''
-            this.cocktailFlavor.value = 'sweet'
-            this.cocktailIngredients.value = ''
-            this.cocktailPreparation.value = ''
-            this.cocktailPic.value = ''
-        // debugger
+        this.cocktailName.value = ''
+        this.inputLiquor.value = ''
+        this.cocktailFlavor.value = ''
+        this.cocktailIngredients.value = ''
+        this.cocktailPreparation.value = ''
+        this.cocktailPic.value = ''
     }
 
     fetchAndLoadCocktails() {
         this.adapter
             .getCocktails()
             .then(cocktails => {
-                // console.log(cocktails)
+                // debugger
                 for(const cocktail of cocktails) {
                 // cocktails.data.forEach(cocktail => {
                     // debugger
@@ -85,81 +63,60 @@ class Cocktails {
                         preparation: cocktail.preparation,
                         pic: cocktail.pic
                     }
+                    // debugger
                     let newCocktail = new Cocktail(cocktailObj)
                     this.cocktails.push(newCocktail)
-                    // console.log(this.cocktails)
                 }
             })
-            // console.log(this.cocktails)
-            .then(() => this.renderCocktails())
-            // .then(() => this.deleteCocktail())
-            
+            .then(() => this.renderCocktails())            
     }
 
     renderCocktails() {
-        // this.container = document.querySelector('#cocktails-container')
-        this.container.innerHTML = this.cocktails.map(cocktail => cocktail.cocktailHTML()).join('') 
-        
-        // debugger
-        // this.deleteCocktail()
-        // this.deleteBtn = document.querySelector("#deleteBtn")
-        // this.container.querySelector('button')
-        // this.deleteBtn = this.container.querySelectorAll('deleteBtn')
-       
+        console.log('START', this.cocktails)
+        this.container.innerHTML = this.cocktails.map(cocktail => cocktail.cocktailHTML()).join('')   
         this.container.addEventListener('click', (e) => {
-            // console.log(e.target.parentNode)
+            e.preventDefault()
             if(e.target.classList.contains('delete-button')) {
-                this.deleteCocktail(e)
+            let cocktailId = e.target.parentElement.getAttribute("data-id")
+            this.deleteCocktail(cocktailId)               
             }
         })
-        // debugger
-        // this.deleteBtn = this.container.querySelectorAll('.delete-button')
-        // for(const del of this.deleteBtn) {
-        //     del.addEventListener('click', this.deleteCocktail.bind(this))
-        // }
-
     }
 
-    deleteCocktail(e) {
-        // debugger
-        // this.deleteBtn = this.container.querySelector('#deleteBtn')
-        // this.deleteBtn.addEventListener('click', this.deleteCocktail.bind(this))
-        e.preventDefault()
-        // debugger
-        const cocktailId = e.target.parentElement.getAttribute("data-id")
-        // debugger
+    deleteCocktail(cocktailId) {
+        console.log(cocktailId)
+        let parsedId = parseInt(cocktailId, 10)
         this.adapter
-            .destroyCocktailId(cocktailId)
-  
-           
-        // this.cocktails.filter(c => c.Id != cocktailId)
- 
-        // this.cocktails.remove(function(el) {
-        //    return el.Id == cocktailId
-        // })
+            .destroyCocktailId(parsedId)
 
-
+        // filter ???????  
+        // console.log('START', this.cocktails)   
         // this.cocktails.filter(function(c) {
-        //     return c.Id !=cocktailId
-        // })
-        const indexN = parseInt(cocktailId, 10)
-        const removeIndex = this.cocktails.map(function(c){
-            return c.id
-        }).indexOf(indexN)
+        //     // debugger
+        //     const indexN = parseInt(cocktailId, 10)
+        //     return c.id != indexN
+        // })      
+        // e.target.parentNode.remove()
+        // this.renderCocktails()
+        // console.log('END', this.cocktails)
+        // // ????????????
+        
+        // Working code: ******
+       
+        let removeIndex = this.cocktails.map(function(c){          
+                return c.id
+            }).indexOf(parsedId)
         this.cocktails.splice(removeIndex, 1)
 
-        e.target.parentElement.remove()
-        this.renderCocktails()
+        document.querySelector('[data-id="' + cocktailId + '"]').parentElement.remove()
+        // parentNode.remove()
         // debugger
 
+        //this.renderCocktails()
+        console.log('END', this.cocktails)
+        // // ******
         
-        // e.target.parentNode.remove()
-        // this.fetchAndLoadCocktails()
-        // this.container.innerHTML = this.container.innerHTML
-
-
         // working but does not seem ideal
         // location.reload()
-
     }
 }

@@ -14,6 +14,17 @@ When we provide two arguments to .splice(), the first is still the index at whic
 
 # join table has no other input but the ids of the models we want to associate --> has_and_belongs_to_many :liquors
 
+# db: Set-up ON_DELETE CASCADE
+ class UpdateForeignKeyAddOnDeleteConstraint < ActiveRecord::Migration[6.0]
+   def change
+     remove_foreign_key :liquor_cocktails, :cocktails
+     remove_foreign_key :liquor_cocktails, :liquors 
+     add_foreign_key :liquor_cocktails, :cocktails, on_delete: :cascade
+     add_foreign_key :liquor_cocktails, :liquors, on_delete: :cascade
+   end
+ end
+
+
 # Another option for handling delete button
 > cocktails.js (initBindings...)
         // this.deleteBtn = this.container.querySelector('#deleteBtn')

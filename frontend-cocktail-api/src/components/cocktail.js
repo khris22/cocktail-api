@@ -1,5 +1,6 @@
 class Cocktail {
     constructor(cocktail) {
+        // debugger
         this.id = cocktail.id
         this.name = cocktail.name
         this.flavor = cocktail.flavor
@@ -7,7 +8,6 @@ class Cocktail {
         this.preparation = cocktail.preparation
         this.pic = cocktail.pic
         this.liquors = this.getLiquorNames(cocktail.liquors)
-        //  this.liquors = cocktail.liquors
     }
     
     getLiquorNames(liquors){    
