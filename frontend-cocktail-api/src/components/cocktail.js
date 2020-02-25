@@ -1,6 +1,5 @@
 class Cocktail {
     constructor(cocktail) {
-        // debugger
         this.id = cocktail.id
         this.name = cocktail.name
         this.flavor = cocktail.flavor

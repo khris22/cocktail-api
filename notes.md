@@ -24,7 +24,6 @@ When we provide two arguments to .splice(), the first is still the index at whic
    end
  end
 
-
 # Another option for handling delete button
 > cocktails.js (initBindings...)
         // this.deleteBtn = this.container.querySelector('#deleteBtn')
@@ -34,7 +33,69 @@ When we provide two arguments to .splice(), the first is still the index at whic
         // for(const del of this.deleteBtn) {
         //     del.addEventListener('click', this.deleteCocktail.bind(this))
         // }
+>using filter
+        // console.log('START', this.cocktails)   
+        // this.cocktails.filter(function(c) {
+        //     const indexN = parseInt(cocktailId, 10)
+        //     return c.id != indexN
+        // })      
+        // e.target.parentNode.remove()
+        // this.renderCocktails()
+        // console.log('END', this.cocktails)
+>refreshes the page when rendering
+        // working but does not seem ideal
+        // location.reload()
 
+# Adding a search box
+        // this.searchBox = document.querySelector('#search-box')
+        // this.searchBox.addEventListener('input', this.findMatch.bind(this))
+        // findMatch(e) {
+        // e.preventDefault()
+        // this.searchBox.value // const input = e.currentTarget.value
+        // filter??
+        // let matchArray = this.liquors.find(liq => liq.name.toLowerCase() === input.toLowerCase()) //returns an Object
+        // this.liquorInfo.value = ''
+
+
+        // let filterLiquor = this.filterMatch()
+        // this.renderLiquorsOptions(filterLiquor)
+        // let newLiquorArray = matchLiquor.map(liq => liq.liquorHTML()).join('')
+        // this.searchContainer.innerHTML = newLiquorArray
+        // this.searchForm.style.display = "visible"
+        // filterMatch() {
+        //     let matchLiquor = this.liquors.filter(liquor => { 
+        //         return liquor.name.toLowerCase().includes(input.toLowerCase()) 
+        //         }) 
+        //         let newLiquorArray = matchLiquor.map(liq => liq.liquorHTML()).join('')
+        //         this.searchContainer.innerHTML = newLiquorArray
+        // }
+
+# renderLiquorsOptions() { 
+          // for(let i=0; i < options.length; i++) {
+          // debugger
+          // let opt = options[i]
+          // let element = document.createElement('option')
+          // element.value = i + 1
+          // this.liquorInfo .appendChild(element)
+
+  # String.prototype.includes is the heavy lifter of the filter. You pass it a string and it gives you back true or false to let you know if its a substring of the original string.
+
+# sort()
+      // .sort((a, b) => {
+      //     if (a > b) return 1;
+      //     if (a < b) return -1;
+      //     return 0;
+      //   })
+      // .sort(function (a, b) {
+      //     if (a < b) {
+      //         return -1;
+      //     }
+      //     if (b < a) {
+      //         return 1;
+      //     }
+      //     return 0;
+      // })
+      // .sort((a, b) => { return a > b; })
 
 
 ### Additional Features

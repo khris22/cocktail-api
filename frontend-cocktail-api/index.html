@@ -2,136 +2,109 @@
 <html lang="en" dir="ltr"></html>
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:500|Raleway:500&display=swap" rel="stylesheet">
     <!-- <script src="https://kit.fontawesome.com/c99d1ce142.js" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <title>Cocktail App</title>
-
- 
+    <title>Cocktail App</title> 
 </head>
 <body>
 <div id="main-container" class="container">
     <div class="header-img">
       <header><center><img src="images/cocktailLogo.png" alt="nomu Header" class="img-fluid"></center></header>
     </div>
-<!-- <div class="card-deck">    -->
-
-<p>
-    <center><button class="btn btn-secondary" data-toggle="collapse" data-target="#new-form-container"
+    <p><center><button class="btn btn-secondary" data-toggle="collapse" data-target="#new-form-container"
     aria-expanded="false" aria-controls="new-form-container">
-    Add a New Cocktail
-  </button></center>
-</p>
-<div id="new-form-container" class="collapse shadow p-3 mb-5 bg-white rounded">
+    Add a New Cocktail</button></center></p>
+    <div id="new-form-container" class="collapse shadow p-3 mb-5 bg-white rounded">
         <form id="new-cocktail-form" class="needs-validation " novalidate>
             <div class="row">
             <!-- <h4>Enter a new Cocktail</h4>  -->
-            <div class="col">
-            <label for='name'>Name:</label>           
-            <input type="text" id='name' class="form-control col" placeholder='Name' required/>
-            </div>
-            <div class="col">
-            <label for='input-liquor'>Liquor:</label>
-            <select id='input-liquor' name="select-category" class="form-control" placeholder='Liquor' required>
-                <option disabled selected value> -- select an option -- </option>
-                <!-- <option value="vodka">vodka</option>
-                <option value="tequila">tequila</option>
-                <option value="gin">gin</option> -->
-            </select>
-        </div></br>
-
-    </div></br>
+                <div class="col">
+                <label for='name'>Name:</label>           
+                <input type="text" id='name' class="form-control col" placeholder='Name' required/>
+                </div>
+                <div class="col">
+                <label for='input-liquor'>Liquor:</label>
+                <select id='input-liquor' name="select-category" class="form-control" placeholder='Liquor' required>
+                    <option disabled selected value> -- select an option -- </option>
+                </select>
+                </div></br>
+            </div></br>
             <!-- radio button for flavor -->
-        <div id='radio-flavor'>
-            <label for='flavor'>Flavor:</label>
-            <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="sweet" name="flavor" value="sweet" checked="checked" class="custom-control-input">
-                <label for="sweet" class="custom-control-label">Sweet</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="sour" name="flavor" value="sour" class="custom-control-input">
-                <label for="sour" class="custom-control-label">Sour</label>
-            </div>  
-            <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="spicy" name="flavor" value="spicy" class="custom-control-input">
-                <label for="spicy" class="custom-control-label">Spicy</label>
-             </div>
-            <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="bitter" name="flavor" value="bitter" class="custom-control-input">
-                <label for="bitter" class="custom-control-label">Bitter</label></br>
-            </div>
-        </div> </br>
-
-    
+            <div id='radio-flavor'>
+                <label for='flavor'>Flavor:</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="sweet" name="flavor" value="sweet" checked="checked" class="custom-control-input">
+                    <label for="sweet" class="custom-control-label">Sweet</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="sour" name="flavor" value="sour" class="custom-control-input">
+                    <label for="sour" class="custom-control-label">Sour</label>
+                </div>  
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="spicy" name="flavor" value="spicy" class="custom-control-input">
+                    <label for="spicy" class="custom-control-label">Spicy</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="bitter" name="flavor" value="bitter" class="custom-control-input">
+                    <label for="bitter" class="custom-control-label">Bitter</label></br>
+                </div>
+            </div></br>
             <div class="form-row">
                 <div class="col">
-            <label for='input-ingredients'>Ingredients:</label></br>  
-            <textarea id='input-ingredients' class="form-control" placeholder='Ingredients' required ></textarea></div>
-            <div class="col">
-            <label for='input-prep'>Preparation:</label></br> 
-            <textarea id='input-prep'  class="form-control" placeholder='Preparation' required ></textarea><br>
-            </div></div>
-
+                <label for='input-ingredients'>Ingredients:</label></br>  
+                <textarea id='input-ingredients' class="form-control" placeholder='Ingredients' required ></textarea>
+                </div>
+                <div class="col">
+                <label for='input-prep'>Preparation:</label></br> 
+                <textarea id='input-prep'  class="form-control" placeholder='Preparation' required ></textarea><br>
+                </div>
+            </div>
             <label for='pic'>Image:</label>           
-            <input type="text" id='pic' placeholder='Image Url' class="form-control" /></br>
-                
-            <center><button class="btn btn-light" type='submit'>Submit</button></center>
-            
+            <input type="text" id='pic' placeholder='Image Url' class="form-control" /></br>                
+            <center><button class="btn btn-light" type='submit'>Submit</button></center>            
         </form>
     </div>
-
-
-    
+ 
     <div id='search-container' >
         <form id='search-form'>
-            <!-- <input id='search-box' type='text' placeholder="Search your Liquors"> -->
-
-        <label for='search-liquor'>Select a liquor for more information:</label>
-        <select id='search-liquor' name="select-category" class="browser-default custom-select">
-        <option disabled selected value> -- Liquor -- </option>
-                <!-- <option value="vodka">vodka</option>
-                <option value="tequila">tequila</option>
-                <option value="gin">gin</option> -->
-        </select></br>
-
-        <div id='search-result' class= 'shadow p-3 mb-5 rounded'>
-            
-        </div>
-
+            <label for='search-liquor'>Select a liquor for more information:</label>
+            <select id='search-liquor' name="select-category" class="browser-default custom-select">
+            <option disabled selected value> -- Liquor -- </option>
+            </select></br>
+        <div id='search-result' class= 'shadow p-3 mb-5 rounded'></div>
         </form>
     </div>
    
-<!-- </div> -->
-   
     <div id="cocktails-content" >
-        <center><h4>Cocktails List:</h4></center>
-        <div id="cocktails-container" class="row row-cols-1 row-cols-md-3">
-        </div>
-        <div id="cocktail-show">
-        </div>
+        <center><h4>Cocktails:</h4></center>
+        <div id="cocktails-container" class="row row-cols-1 row-cols-md-3"></div>
+        <div id="cocktail-show"></div>
     </div>
+    
     <footer class="container card-footer">
         <small>&copy; 2020 <strong>飲む(nomu) by Khris P.</strong></small>
     </footer>
+
 </div>
+<!-- Javascript files -->
+    <script src="src/components/cocktails.js" ></script>
+    <script src="src/components/cocktail.js" ></script>
+    <script src="src/components/liquors.js" ></script>
+    <script src="src/components/liquor.js" ></script>
 
-<script src="src/components/cocktails.js" ></script>
-<script src="src/components/cocktail.js" ></script>
-<script src="src/components/liquors.js" ></script>
-<script src="src/components/liquor.js" ></script>
+    <script src="src/components/app.js" ></script>
 
-<script src="src/components/app.js" ></script>
+    <script src="src/adapters/CocktailsAdapter.js" ></script>
+    <script src="src/adapters/LiquorsAdapter.js" ></script>
 
-<script src="src/adapters/CocktailsAdapter.js" ></script>
-<script src="src/adapters/LiquorsAdapter.js" ></script>
+    <script src="src/index.js" ></script>
 
-<script src="src/index.js" ></script>
-<!-- <script src="lodash.js"></script> -->
+<!-- Bootstrap: -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

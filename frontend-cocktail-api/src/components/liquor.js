@@ -10,7 +10,7 @@ class Liquor {
 
     liquorHTML() {
         return (`
-            <div id='liquor-container' class='liquor-container card-body border border-secondary'>
+            <div id='liquor-container' class='liquor-container card-body border border-secondary' liquor-id='${this.id}'>
                 <h4>Liquor: ${this.name}</h4></br>
                 <p>Alcohol Content: ${this.alcohol_content} alcohol by volume (ABV)</p>
                 <p>Made from: ${this.made_from}</p>
