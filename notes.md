@@ -24,6 +24,18 @@ When we provide two arguments to .splice(), the first is still the index at whic
    end
  end
 
+# CocktailsControllerOption1 Using Fast Json Serializer
+        cocktails = Cocktail.all
+        # options = {
+        #     include: [:liquors]
+        #   }
+        # render json: CocktailSerializer.new(cocktails, options)
+
+        Option2 - Destroy
+        # cocktail = Cocktail.find_by(id:params[:id])
+        # render json: cocktail
+        # Cocktail.destroy(cocktail.id)
+
 # Another option for handling delete button
 > cocktails.js (initBindings...)
         // this.deleteBtn = this.container.querySelector('#deleteBtn')

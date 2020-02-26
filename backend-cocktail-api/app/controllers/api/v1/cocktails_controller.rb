@@ -1,16 +1,8 @@
 class Api::V1::CocktailsController < ApplicationController
 
     def index
-        # Option2
-        cocktails = Cocktail.all
+        cocktails = Cocktail.ordered_by_name
         render json: cocktails.to_json(include: [:liquors]) 
-        
-        # Option1 Using Fast Json Serializer
-        # cocktails = Cocktail.all
-        # options = {
-        #     include: [:liquors]
-        #   }
-        # render json: CocktailSerializer.new(cocktails, options)
     end
 
     def show
@@ -22,7 +14,6 @@ class Api::V1::CocktailsController < ApplicationController
     end
 
     def create
-        # Option1 - Using FastJson serializer
         current_liquor = Liquor.find_by_name(params[:liquor])
         cocktail = current_liquor.cocktails.create(cocktail_params)
         render json: CocktailSerializer.new(cocktail)
@@ -35,16 +26,9 @@ class Api::V1::CocktailsController < ApplicationController
     # end
 
     def destroy  
-        # binding.pry
         cocktail = Cocktail.find_by(id:params[:id])
         cocktail.destroy
-        # cocktail.delete
         render json: cocktail
-
-        # Option2
-        # cocktail = Cocktail.find_by(id:params[:id])
-        # render json: cocktail
-        # Cocktail.destroy(cocktail.id)
     end
 
     private
