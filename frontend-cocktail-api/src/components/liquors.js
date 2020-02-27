@@ -34,7 +34,7 @@ class Liquors {
                 }
             })
             .then(() => this.renderLiquorsOptions())
-            .then(() => this.searchLiquorInfo())
+            // .then(() => this.searchLiquorInfo())
     }
 
     renderLiquorsOptions() {       
@@ -43,20 +43,21 @@ class Liquors {
         for(const liquor of sortedOptions) {
            let element = document.createElement('option')
            element.innerText = liquor
+           const el2 = element.cloneNode(true)
            this.liquorSelect.appendChild(element) 
-        //    this.liquorInfo.appendChild(element)
+           this.liquorInfo.appendChild(el2)
         }    
     }
 
-    searchLiquorInfo() {
-        let options = this.liquors.map(liquor => liquor.name)
-        let sortedOptions = options.sort()
-        for(const liquor of sortedOptions) {
-           let element = document.createElement('option')
-           element.innerText = liquor         
-           this.liquorInfo.appendChild(element)
-        }
-    }
+    // searchLiquorInfo() {
+    //     let options = this.liquors.map(liquor => liquor.name)
+    //     let sortedOptions = options.sort()
+    //     for(const liquor of sortedOptions) {
+    //        let element = document.createElement('option')
+    //        element.innerText = liquor         
+    //        this.liquorInfo.appendChild(element)
+    //     }
+    // }
   
     findMatch(e) {
         e.preventDefault()
