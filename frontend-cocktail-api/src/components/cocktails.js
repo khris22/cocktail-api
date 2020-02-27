@@ -18,6 +18,11 @@ class Cocktails {
         this.cocktailPic = this.cocktailForm.querySelector('#pic')
         // submit btn adding a cocktail
         this.cocktailForm.addEventListener('submit', this.createCocktail.bind(this))
+
+        this.showContainer = document.querySelector('#show-container')
+
+    
+        
     }
 
     createCocktail(e) {
@@ -73,12 +78,39 @@ class Cocktails {
             if(e.target.classList.contains('delete-button')) {
             let cocktailId = e.target.parentElement.getAttribute("data-id")
             this.deleteCocktail(cocktailId)               
-            }
+            } 
         })
+        this.container.addEventListener('click', (e) => {
+            e.preventDefault()
+            // debugger
+            if(e.target.classList.contains('card-header')) {
+            let cId = e.target.parentElement.getAttribute("data-id")
+            this.showInfo(cId)
+            }
+           
+        })
+    }
+
+    showInfo(cId){
+        // console.log('Herenow')
+        let cocktailDataId = parseInt(cId, 10)
+        this.adapter
+            .showInfo(cocktailDataId)
+            .then(cocktail => this.showCocktail(cocktail))
+    }
+
+    showCocktail(cocktail) {
+        console.log("You're Here")
+        debugger
+     const cDetails = document.createElement('p')
+     cDetails.innerText = `${cocktail.data.attributes.name} ${cocktail.data.attributes.ingredient}` 
+
+    this.showContainer.append(cDetails)
     }
 
     deleteCocktail(cocktailId) {
         let parsedId = parseInt(cocktailId, 10)
+        // debugger
         // remove from db
         this.adapter
             .destroyCocktailId(parsedId)

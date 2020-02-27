@@ -29,6 +29,20 @@ class CocktailsAdapter {
             .then(resp => resp.json())
     }
 
+    showInfo(cocktailDataId) {
+        let configObj = {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }
+        return fetch(this.baseUrl + `/${cocktailDataId}`, configObj)
+            .then(resp => resp.json())
+    }
+    
+
+
     destroyCocktailId(cocktailId) { 
         let configObj = {
             method: "DELETE",

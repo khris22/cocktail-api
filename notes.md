@@ -109,6 +109,8 @@ When we provide two arguments to .splice(), the first is still the index at whic
       // })
       // .sort((a, b) => { return a > b; })
 
+# .cloneNode()
+The Node.cloneNode() method returns a duplicate of the node on which this method was called.
 
 ### Additional Features
 [ ] User Login

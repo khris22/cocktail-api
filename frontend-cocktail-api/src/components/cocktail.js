@@ -29,6 +29,11 @@ class Cocktail {
             `)
     }
     
+    // showHTML(cocktail) {
+    //     console.log('seeee')
+    // }
+
+
 }
 
 
