@@ -109,6 +109,15 @@ When we provide two arguments to .splice(), the first is still the index at whic
       // })
       // .sort((a, b) => { return a > b; })
 
+#ShowEachCocktail
+    //  const cDetails = document.createElement('p')
+    //  cDetails.innerText = `Name: ${cocktail.data.attributes.name}
+    //  ${cocktail.data.attributes.flavor} 
+    //  ${cocktail.data.attributes.ingredient}
+    //  ${cocktail.data.attributes.preparation}` 
+    //  cocktail.data.attributes.liquors.forEach(liq => cDetails.innerText += liq.name) 
+    // this.showContainer.append(cDetails)
+
 # .cloneNode()
 The Node.cloneNode() method returns a duplicate of the node on which this method was called.
 

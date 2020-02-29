@@ -20,9 +20,7 @@ class Cocktails {
         this.cocktailForm.addEventListener('submit', this.createCocktail.bind(this))
 
         this.showContainer = document.querySelector('#show-container')
-
-    
-        
+     
     }
 
     createCocktail(e) {
@@ -83,11 +81,10 @@ class Cocktails {
         this.container.addEventListener('click', (e) => {
             e.preventDefault()
             // debugger
-            if(e.target.classList.contains('card-header')) {
+            if(e.target.classList.contains('cocktail-pic')) {
             let cId = e.target.parentElement.getAttribute("data-id")
             this.showInfo(cId)
-            }
-           
+            }         
         })
     }
 
@@ -99,13 +96,27 @@ class Cocktails {
             .then(cocktail => this.showCocktail(cocktail))
     }
 
+    // NEEDS TO BE REFACTORED!!!
     showCocktail(cocktail) {
         console.log("You're Here")
-        debugger
-     const cDetails = document.createElement('p')
-     cDetails.innerText = `${cocktail.data.attributes.name} ${cocktail.data.attributes.ingredient}` 
-
-    this.showContainer.append(cDetails)
+        console.log(cocktail)
+ 
+        this.showContainer.innerHTML = `<div class='card mb-3' cocktail-id='${cocktail.data.attributes.id}'>
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="${cocktail.data.attributes.pic}" class="card-img" >
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h4 class="card-title">Name: ${cocktail.data.attributes.name}</h4>
+                    <p class="card-text">Flavor: ${cocktail.data.attributes.flavor}</p>
+                    <p class="card-text">Ingredients: ${cocktail.data.attributes.ingredient}</p>
+                    <p class="card-text">Preparation: ${cocktail.data.attributes.preparation}</p>
+                    <p class="card-text">Liquors: ${cocktail.data.attributes.liquors.map(liq => liq.name).join(', ')}</p>
+                </div>
+            </div>
+        </div>
+        </div>`
     }
 
     deleteCocktail(cocktailId) {
