@@ -98,8 +98,8 @@ class Cocktails {
 
     // NEEDS TO BE REFACTORED!!!
     showCocktail(cocktail) {
-        console.log("You're Here")
-        console.log(cocktail)
+        // console.log("You're Here")
+        // console.log(cocktail)
  
         this.showContainer.innerHTML = `<div class='card mb-3' cocktail-id='${cocktail.data.attributes.id}'>
         <div class="row no-gutters">
@@ -108,6 +108,7 @@ class Cocktails {
             </div>
             <div class="col-md-8">
                 <div class="card-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button> 
                     <h4 class="card-title">Name: ${cocktail.data.attributes.name}</h4>
                     <p class="card-text">Flavor: ${cocktail.data.attributes.flavor}</p>
                     <p class="card-text">Ingredients: ${cocktail.data.attributes.ingredient}</p>

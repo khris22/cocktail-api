@@ -16,6 +16,9 @@ div.cocktail-card img {
   margin-right: auto;
   border-radius: 15px; 
 }
+div.cocktail-card img:hover {
+  opacity: 0.3;
+}
 
 #new-cocktail-form {
   background: #f3bcbc;
@@ -29,4 +32,29 @@ div.card {
 #search-result {
     background: #d8bdbd;
     padding: 20px;
+  }
+
+  /* MODAL CSS */
+  .modal {
+    display: none;
+    position: fixed;
+    padding-top: 200px;
+    background-color: rgba(245, 234, 234, 0.8); /* Black w/ opacity */
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f34a4a;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
   }

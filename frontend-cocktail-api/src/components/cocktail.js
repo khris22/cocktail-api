@@ -16,7 +16,7 @@ class Cocktail {
     cocktailHTML(){
         return(`          
             <div class="card-group">
-                <div name='cocktail-card' class='cocktail-card card border-secondary mb-3 card-body' data-id='${this.id}'>
+                <div name='cocktail-card' class='cocktail-card card border-secondary mb-3 card-body' data-id='${this.id}' data-toggle="modal" data-target="#myModal">
                     <div class="card-header"><h5>${this.name}</h5></div></br>
                     <img class='cocktail-pic' src='${this.pic}'/></br>
                     <button name='delete-card' class="delete-button btn btn-secondary btn-sm">Delete</button>
