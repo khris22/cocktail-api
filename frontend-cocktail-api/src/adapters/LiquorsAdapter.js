@@ -1,6 +1,6 @@
 class LiquorsAdapter {
     constructor() {
-        this.baseUrl = 'http://localhost:3000/api/v1/liquors'
+        this.baseUrl = 'https://nomu-api.herokuapp.com/api/v1/liquors'
     }
 
     getLiquors() {
