@@ -1,4 +1,4 @@
-# class Api::V1::LiquorCocktailsController < ApplicationController
+class Api::V1::LiquorCocktailsController < ApplicationController
 
 #     def index
 #         liquor_cocktails = LiquorCocktail.all 
@@ -32,4 +32,4 @@
 #             liquor_cocktail: LiquorCocktailsSerializer.new(liquor_cocktail)
 #         }
 #     end
-# end
+end
