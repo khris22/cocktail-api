@@ -1,7 +1,9 @@
 # 飲む(nomu)
 
 飲む(nomu) means `"to drink"` in Japanese. This app is for everybody who wants options right away when ordering or making a cocktail.
+
 LIVE: https://nomu-js.netlify.app/frontend-cocktail-api/
+
 DEMO: https://youtu.be/MoNnhssK0pI
 
 ## Overview
