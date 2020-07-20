@@ -6,6 +6,8 @@ LIVE: https://nomu-js.netlify.app/frontend-cocktail-api/
 
 DEMO: https://youtu.be/MoNnhssK0pI
 
+Blog Post: https://khris22.github.io/juggling_javascript
+
 ## Overview
 
 飲む(nomu) is a JavaScript Single Page Application (SPA) with a backend Ruby on Rails API. This app allows the user to save different cocktails and how to prepare them in the app. It also gives information about the different kinds of liquor the user can use. It also has the functionality to delete a prticular cocktail based on the user preference.    
